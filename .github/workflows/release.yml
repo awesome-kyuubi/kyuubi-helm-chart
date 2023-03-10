@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
 
-permissions: read-all|write-all
+permissions: write-all
 
 jobs:
   release:

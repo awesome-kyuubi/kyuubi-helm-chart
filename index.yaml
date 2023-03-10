@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  kyuubi:
+  - apiVersion: v2
+    appVersion: master-snapshot
+    created: "2023-03-10T08:41:29.851998614Z"
+    description: A Helm chart for Kyuubi server
+    digest: f7110863023e4676f19de53c768a066508eee9ed149592fd4b1512c7bf1b5774
+    home: https://kyuubi.apache.org
+    icon: https://raw.githubusercontent.com/apache/kyuubi/master/docs/imgs/logo.png
+    name: kyuubi
+    sources:
+    - https://github.com/apache/kyuubi
+    type: application
+    urls:
+    - https://github.com/awesome-kyuubi/kyuubi-helm-chart/releases/download/kyuubi-0.1.0/kyuubi-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-03-10T08:41:29.852004514Z"

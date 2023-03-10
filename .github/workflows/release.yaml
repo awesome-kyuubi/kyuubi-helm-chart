@@ -1,21 +1,25 @@
-name: release
-on: 
+name: Release Charts
+
+on:
   push:
     branches:
-      - master
-    paths:
-      - 'stable/**'
-  release:
-    types: [published, created]
+      - main
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Publish Helm charts
-        uses: stefanprodan/helm-gh-pages@v1.4.1
+        uses: actions/checkout@v3
         with:
-          token: ${{ secrets.CR_TOKEN }}
-          charts_dir: stable
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.5.0
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
